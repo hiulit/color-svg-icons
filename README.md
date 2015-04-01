@@ -56,6 +56,7 @@ You can choose to append (use as a suffix) the color's name instead of prependin
 options: {
   prepend: false
 }
+```
 
 ### Usage Examples
 In this example SVGO.optimize will be run on all svgs in the src/svgs/* path, then color will be set to given CSS hex value, and this result saved in dest folder with property name as the prefix.
