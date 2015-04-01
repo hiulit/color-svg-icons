@@ -23,6 +23,9 @@ module.exports = function (grunt) {
       if (data.match(/fill="/)) {
         data = data.replace(/(fill=")[^none][^"]+(")/g, "$1" + fill + "$2");
       }
+      if (data.match(/stroke="/)) {
+        data = data.replace(/(stroke=")[^"]+(")/g, "$1" + fill + "$2");
+      }
       else {
         var attributes = " fill=\"" + fill + "\"";
         data = data.replace(/<path/g, "<path" + attributes);
