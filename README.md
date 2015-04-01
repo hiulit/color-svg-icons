@@ -59,7 +59,9 @@ options: {
 So the resulting files would be `red-whatever-icon.svg` and `blue-whatever-icon.svg`.
 
 Additionally, you can use the color name `base` to set a default color. This color name won't be outputted.
-You can also use `hover` as a color name, as well as `active` and `focus`, like this:
+
+You can also use `hover` as a color name, as well as `active` and `focus`. This will be outputted with an underscore so other plugins can
+quickly find it using a simple regex.
 
 ```javascript
 options: {
@@ -79,6 +81,8 @@ So the resulting files would be `whatever-icon.svg` and `whatever-icon_hover.svg
 Type: `Boolean` Default: `true`
 
 You can choose to append (use as a suffix) the color's name instead of prepending it, which is the default behaviour.
+
+Just set `prepend` to `false`.
 
 ```javascript
 options: {
