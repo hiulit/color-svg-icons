@@ -47,6 +47,15 @@ Type: `Object`
 
 Properties of the colors object will be used to get the value of color to set the svg icon to and name will be used as a prefix to resulting files.
 
+#### options.prepend
+Type: `Boolean` Default: `true`
+
+You can choose to append (use as a suffix) the color's name instead of prepending it, which is the default behaviour.
+
+```
+options: {
+  prepend: false
+}
 
 ### Usage Examples
 In this example SVGO.optimize will be run on all svgs in the src/svgs/* path, then color will be set to given CSS hex value, and this result saved in dest folder with property name as the prefix.
