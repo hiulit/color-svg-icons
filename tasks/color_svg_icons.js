@@ -21,7 +21,7 @@ module.exports = function (grunt) {
   function transform (data, fill) {
     if (fill) {
       if (data.match(/fill="/)) {
-        data = data.replace(/(fill=")[^"]+(")/g, "$1" + fill + "$2");
+        data = data.replace(/(fill=")[^none][^"]+(")/g, "$1" + fill + "$2");
       }
       else {
         var attributes = " fill=\"" + fill + "\"";
