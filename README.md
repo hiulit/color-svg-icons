@@ -47,7 +47,7 @@ Type: `Object`
 
 Properties of the colors object will be used to get the value of color to set the svg icon to and name will be used as a prefix to resulting files.
 
-```javascript
+```js
 options: {
   colors: {
     red: '#ff0000',
@@ -56,14 +56,15 @@ options: {
 }
 ```
 
-So the resulting files would be `red-whatever-icon.svg` and `blue-whatever-icon.svg`.
+So the resulting files would be `red_whatever-icon.svg` and `blue_whatever-icon.svg`.
 
-Additionally, you can use the color name `base` to set a default color. This color name won't be outputted.
+##### Reserved words and link states (:hover, :active, etc)
 
-You can also use `hover` as a color name, as well as `active` and `focus`. This will be outputted with an underscore so other plugins can
-quickly find it using a simple regex.
+You can use the **reserved** color name **"base"** to set a default color. This color name won't be outputted.
 
-```javascript
+You can also use **"hover"** as a color name, as well as **"active"** and **"focus"**. These will be outputted just like any other color.
+
+```js
 options: {
   colors: {
     base: '#ff0000',
@@ -75,23 +76,43 @@ options: {
 
 So the resulting files would be `whatever-icon.svg` and `whatever-icon_hover.svg`.
 
-*Notice the usage of `prepend: false`. See below.*
+_Notice the usage of `prepend: false`. See below._
+
+This is pretty useful when using in conjunction with a spriting plugin, such as [grunt-dr-svg-sprites](https://github.com/drdk/grunt-dr-svg-sprites), which creates CSS classes from the files names.
+
+So, with the given options above, the CSS result would be:
+
+```css
+.whatever-icon {
+  background-position: 0 0;
+  height: 20px;
+  width: 20px;
+}
+
+.whatever-icon:hover {
+  background-position: 20px 0;
+  height: 20px;
+  width: 20px;
+}
+```
 
 #### options.prepend
 Type: `Boolean` Default: `true`
 
 You can choose to append (use as a suffix) the color's name instead of prepending it, which is the default behaviour.
 
-Just set `prepend` to `false`.
+Just add:
 
-```javascript
+```js
 options: {
   prepend: false
 }
 ```
 
+This way you can have BEM style names
+
 ### Usage Examples
-In this example SVGO.optimize will be run on all svgs in the src/svgs/* path, then color will be set to given CSS hex value, and this result saved in dest folder with property name as the prefix.
+In this example `SVGO.optimize` will be run on all svgs in the `src/svgs/*` path, then color will be set to given CSS hex value, and this result saved in dest folder with property name as the prefix.
 
 ```
 grunt.initConfig({
@@ -112,7 +133,7 @@ grunt.initConfig({
 ```
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
 _(Nothing yet)_
