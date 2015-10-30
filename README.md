@@ -125,6 +125,15 @@ You'll get `whatever-icon_red` and `whatever-icon_blue` instead of `red_whatever
 
 This is useful when you need BEM-style names or when you are using the link state behaviour mentioned before.
 
+### options.stateToken
+Type: `String` Default: `_`
+
+```js
+options: {
+  stateToken: '-'
+}
+```
+
 ### Usage Examples
 In this example `SVGO.optimize` will be run on all svgs in the `src/svgs/*` path, then color will be set to given CSS hex value, and this result saved in dest folder with property name as the prefix.
 
