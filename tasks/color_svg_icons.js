@@ -56,6 +56,7 @@ module.exports = function (grunt) {
 
   grunt.registerMultiTask('color_svg_icons', 'Color svg icons.', function () {
     var colors = this.data.options.colors;
+    var stateToken = this.data.options.stateToken;
     var prepend = this.data.options.prepend;
     if (!colors) {
       grunt.log.error('Must define colors to set svgs.');
@@ -101,14 +102,17 @@ module.exports = function (grunt) {
               name = c;
             }
             var outpath;
+            if(stateToken === undefined) {
+              stateToken = '_';
+            }
             if(prepend === undefined) {
               prepend = true;
             }
             if(prepend) {
-              name = c !== 'base'? name + '_':name;
+              name = c !== 'base'? name + stateToken:name;
               outpath = f.dest + path.sep +  name + path.basename(data['filename']);
             } else {
-              name = c !== 'base'? '_' + name:name;
+              name = c !== 'base'? stateToken + name:name;
               outpath = f.dest + path.sep + path.basename(data['filename'], '.svg') + name + '.svg';
             }
             grunt.log.writeln('File "' + outpath + '" created.');
