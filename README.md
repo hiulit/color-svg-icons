@@ -109,7 +109,21 @@ options: {
 }
 ```
 
-This way you can have BEM style names for example.
+So, in this case:
+
+```js
+options: {
+  colors: {
+    red: '#ff0000',
+    blue: '0000ff'
+  },
+  prepend: false
+}
+```
+
+You'll get `whatever-icon_red` and `whatever-icon_blue` instead of `red_whatever-icon` and `blue_whatever-icon`.
+
+This is useful when you need BEM-style names or when you are using the link state behaviour mentioned before.
 
 ### Usage Examples
 In this example `SVGO.optimize` will be run on all svgs in the `src/svgs/*` path, then color will be set to given CSS hex value, and this result saved in dest folder with property name as the prefix.
