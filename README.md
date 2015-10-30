@@ -58,11 +58,11 @@ options: {
 
 So the resulting files would be `red_whatever-icon.svg` and `blue_whatever-icon.svg`.
 
-##### Reserved words and link states (:hover, :active, etc)
+##### Reserved words and link states
 
 You can use the **reserved** color name **"base"** to set a default color. This color name won't be outputted.
 
-You can also use **"hover"** as a color name, as well as **"active"** and **"focus"**. These will be outputted just like any other color.
+You can also use **:hover** as a color name, as well as **:active** and **:focus**. These will be outputted just like any other color.
 
 ```js
 options: {
@@ -76,7 +76,7 @@ options: {
 
 So the resulting files would be `whatever-icon.svg` and `whatever-icon_hover.svg`.
 
-_Notice the usage of `prepend: false`. See below._
+_Notice the usage of `prepend: false`. See [options.prepend](#options.prepend) below._
 
 This is pretty useful when using in conjunction with a spriting plugin, such as [grunt-dr-svg-sprites](https://github.com/drdk/grunt-dr-svg-sprites), which creates CSS classes from the files names.
 
@@ -109,7 +109,7 @@ options: {
 }
 ```
 
-This way you can have BEM style names
+This way you can have BEM style names for example.
 
 ### Usage Examples
 In this example `SVGO.optimize` will be run on all svgs in the `src/svgs/*` path, then color will be set to given CSS hex value, and this result saved in dest folder with property name as the prefix.
