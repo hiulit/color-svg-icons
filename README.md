@@ -76,7 +76,7 @@ options: {
 
 So the resulting files would be `whatever-icon.svg` and `whatever-icon_hover.svg`.
 
-_Notice the usage of `prepend: false`. See [options.prepend](#options.prepend) below._
+_Notice the usage of `prepend: false`. See [options.prepend](#optionsprepend) below._
 
 This is pretty useful when using in conjunction with a spriting plugin, such as [grunt-dr-svg-sprites](https://github.com/drdk/grunt-dr-svg-sprites), which creates CSS classes from the files names.
 
