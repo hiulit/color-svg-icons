@@ -158,5 +158,11 @@ grunt.initConfig({
 ## Contributing
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
-## Release History
-_(Nothing yet)_
+## Changelog
+### v1.1.0 (2016-27-07)
+* Update peerDependencies to support Grunt 1.0 [#1](https://github.com/hiulit/color-svg-icons/pull/1)
+* Fill attribute for ellipse [#2](https://github.com/hiulit/color-svg-icons/pull/2)
+
+### v1.0.0 (2015-11-03)
+* Created fork.
+* Added extra functionalities over the main project.
