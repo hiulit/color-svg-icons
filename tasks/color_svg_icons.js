@@ -31,6 +31,7 @@ module.exports = function (grunt) {
         data = data.replace(/<path/g, "<path" + attributes);
         data = data.replace(/<circle/g, "<circle" + attributes);
         data = data.replace(/<rect/g, "<rect" + attributes);
+        data = data.replace(/<ellipse/g, "<ellipse" + attributes);
       }
     }
     return data;
